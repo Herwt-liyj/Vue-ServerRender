@@ -16,5 +16,11 @@ module.exports = merge(baseConfig,{
 
     output: {
         libraryTarget:'commonjs2'
-    }
+    },
+    externals:nodeExternals({
+        whitelist:/\.css$/
+    }),
+    plugins:[
+        new VueSSRServerPlugin()
+    ]
 })
